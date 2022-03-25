@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Restauration.Models.Restaurant>
+
+@{
+    ViewData["Title"] = "Accueil";
+}
+
+<h1 class="text-center">
+    <u>
+        Listes de tous les restaurants
+    </u>
+</h1>
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-10">
+                Liste des Restaurants
+            </div>
+            <div class="col-md-2 d-flex justify-content-end">
+                <a class="btn btn-sm btn-outline-success" asp-action="Create">
+                    ➕ Restaurant
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-striped" id="myTable">
+            <thead>
+                <tr class="text-center">
+                    <th>
+                        Actions
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nom)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Adresse)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cuisine)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Note)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var restaurant in Model)
+                {
+                    <tr class="text-center">
+                        <td>
+                            @Html.ActionLink("🖋️", "Edit", new { id=restaurant.Id }) |
+                            @Html.ActionLink("📜", "Details", new { id=restaurant.Id }) |
+                            @Html.ActionLink("🗑️", "Delete", new { id=restaurant.Id })
+                        </td>
+                        <td>
+                            @Html.DisplayFor(r => restaurant.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(r => restaurant.Nom)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(r => restaurant.Adresse)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(r => restaurant.Cuisine)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(r => restaurant.Note)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

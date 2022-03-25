@@ -1,0 +1,55 @@
+﻿@model Restauration.Models.Restaurant
+
+@{
+    ViewData["Title"] = "Détails du restaurant";
+}
+
+<a asp-action="Index">
+    &lt; Retour
+</a>
+
+<h1 class="text-center">
+    <u>
+        Détails du Restaurant ##RST-@Model.Id
+    </u>
+</h1>
+
+<div class="card">
+    <div class="card-header">
+        Affichage detaillé
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-md-2 text-right">
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-md-2 text-right">
+                @Html.DisplayNameFor(model => model.Nom)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nom)
+            </dd>
+            <dt class="col-md-2 text-right">
+                @Html.DisplayNameFor(model => model.Adresse)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Adresse)
+            </dd>
+            <dt class="col-md-2 text-right">
+                @Html.DisplayNameFor(model => model.Cuisine)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cuisine)
+            </dd>
+            <dt class="col-md-2 text-right">
+                @Html.DisplayNameFor(model => model.Note)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Note)
+            </dd>
+        </dl>
+    </div>
+</div>

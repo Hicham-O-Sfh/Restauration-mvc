@@ -1,0 +1,68 @@
+﻿@model Restauration.Models.Restaurant
+
+@{
+    ViewData["Title"] = "Création";
+}
+
+<div>
+    <a asp-action="Index">
+        &lt; Retour
+    </a>
+</div>
+
+<h1 class="text-center">
+    <u>
+        Ajout d'un nouveau restaurant
+    </u>
+</h1>
+
+<div class="card">
+    <div class="card-header">
+        Création
+    </div>
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Nom" class="control-label"></label>
+                        <input asp-for="Nom" class="form-control" />
+                        <span asp-validation-for="Nom" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Adresse" class="control-label"></label>
+                        <input asp-for="Adresse" class="form-control" />
+                        <span asp-validation-for="Adresse" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Cuisine" class="control-label"></label>
+                        <input asp-for="Cuisine" class="form-control" />
+                        <span asp-validation-for="Cuisine" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Note" class="control-label"></label>
+                        <input asp-for="Note" class="form-control" />
+                        <span asp-validation-for="Note" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2 d-flex justify-content-end">
+                    <input type="submit" value="✅ Confirmer" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}
